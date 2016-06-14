@@ -1,7 +1,7 @@
 import boto3
 
 session = boto3.session.Session()
-client = session.client('ses', region_name='eu-west-1') 
+client = session.client('ses', region_name='eu-west-1')
 
 def send_email(to, subject, body):
     response = client.send_email(
@@ -32,4 +32,6 @@ def send_email(to, subject, body):
         ],
         ReturnPath='mailing@jkan.pl'
     )
-    return response print send_email('s168840@wizard.uek.krakow.pl', 'test', 'test')
+    return response
+
+print send_email('s168840@wizard.uek.krakow.pl', 'test', 'test')

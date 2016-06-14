@@ -10,6 +10,8 @@ def html_doc(variables):
     j2_env = Environment(loader=FileSystemLoader(THIS_DIR), trim_blocks=True)
     return j2_env.get_template('album.html.j2').render(
         variables=variables
-    ) def create(albumData):
+    )
+
+def create(albumData):
   pdf = create_pdf(html_doc(albumData))
   return pdf
